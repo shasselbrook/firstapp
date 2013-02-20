@@ -1,0 +1,25 @@
+<h1>New Member</h1>
+<%= form_for(@member) do |member_form| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= member_form.label :name %><br />
+    <%= member_form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= member_form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', members_path %>

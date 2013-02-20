@@ -1,0 +1,1 @@
+First application to test ruby, rails and git
